@@ -24,17 +24,29 @@ public class Main {
         backpack.add(potionPouch);
         backpack.add(holdingBag);
 
+        System.out.println("=== Full Inventory ===");
         backpack.displayInfo();
-        System.out.println("Total backpack weight: " + backpack.getWeight() + " lbs");
+        System.out.println("Total Backpack Weight: " + backpack.getWeight() + " lbs");
 
-        System.out.println("\nPotion Pouch Contents:");
+        System.out.println("\n=== Potion Pouch ===");
         potionPouch.displayInfo();
         System.out.println("Potion Pouch Total: " + potionPouch.getWeight() + " lbs");
 
+        System.out.println("\n=== Unsupported Operation Test ===");
         try {
             sword.add(new Item("Extra Item", 1.0));
         } catch (UnsupportedOperationException e) {
-            System.out.println("\nWarning: Items cannot contain other items.");
+            System.out.println("Warning: Items cannot contain other items.");
         }
+
+        System.out.println("\n=== Empty Bag Test ===");
+        Bag emptyBag = new Bag("Empty Bag", 1.0);
+        emptyBag.displayInfo();
+        System.out.println("Empty Bag Weight: " + emptyBag.getWeight() + " lbs");
+
+        System.out.println("\n=== Remove Item Test ===");
+        System.out.println("Weight Before Removal: " + backpack.getWeight() + " lbs");
+        backpack.remove(rope);
+        System.out.println("Weight After Removal: " + backpack.getWeight() + " lbs");
     }
 }

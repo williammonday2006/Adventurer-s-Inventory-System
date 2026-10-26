@@ -9,3 +9,7 @@ I created Bag to store items and calculate their combined weight. Polymorphism a
 # Phase 3
 
 I built a nested inventory with items and bags inside other bags. Recursive methods calculate total weight and display contents. Adding a new container type can extend the system without modifying existing classes.
+
+# Phase 4
+
+I tested empty bags, removing items, nested containers, and unsupported operations. The weights updated correctly, and empty bags returned their base weight without errors.
